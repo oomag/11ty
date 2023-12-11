@@ -1,0 +1,11 @@
+---
+permalink: assets/js/bundle.js
+---
+{% set js %}
+  {% include "../../../node_modules/jquery/dist/jquery.js" %}
+  {% include "../../../node_modules/bootstrap/dist/js/bootstrap.js" %}
+  {% include "../../../node_modules/intl-tel-input/build/js/intlTelInput.js" %}
+  {% include "../../../node_modules/slick-carousel/slick/slick.js" %}
+  {% include "./_application.js" %}
+{% endset %}
+{{ js | jsmin }}

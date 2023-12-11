@@ -1,0 +1,33 @@
+{
+  "name": "@oomag/create-website-static",
+  "version": "1.0.0",
+  "description": "A CLI to bootstrap static websites",
+  "main": "src/index.js",
+  "bin": {
+    "@testcp/create-website-static": "bin/create-website-static",
+    "create-website-static": "bin/create-website-static"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "create-website-static"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "arg": "^5.0.2",
+    "chalk": "^4.1.2",
+    "cross-spawn": "^7.0.3",
+    "esm": "^3.2.25",
+    "execa": "^5.1.1",
+    "inquirer": "^8.0.0",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}

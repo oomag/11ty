@@ -1,0 +1,44 @@
+<div class="modal modal-big" id="modal-contacts">
+  <div class="modal-close"></div>
+  <div class="modal-content">
+    <div class="modal-row">
+      <div class="modal-col modal-col__info">
+        <h3 class="modal-title">{{ translations.modals.contacts.info.title }}</h3>
+        <p>{{ translations.modals.contacts.info.text }}</p>
+        <div class="modal-img">
+          <img src={{ 'modal-2.svg' | images_path }} />
+        </div>
+      </div>
+      <div class="modal-col modal-col__form">
+        <h3 class="modal-col__title">{{ translations.modals.contacts.form.title }}</h3>
+        <form class="contacts-form" action="{{ env.API_URL }}/leads" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" autocomplete="off" /><input type="hidden" name="authenticity_token" value="J8XeloQPM1xfZzCJMTOOydV+weQNdLRPEtONUrce68tM+mO+RPcOrXRoYD31oelCFye/WxoadjKMnvwpBGbXOQ==" autocomplete="off" />
+          <div class="messages-container">
+            <div class="alert alert-dismissible alert-none">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <div class="content"></div>
+            </div>
+          </div>
+          <div class="input-block">
+            <input class="form__field" placeholder="{{ translations.modals.contacts.form.rows.firstName }}" type="text" name="lead[first_name]" id="lead_first_name" />
+            <div class="placeholder">{{ translations.modals.contacts.form.rows.firstName }}</div>
+          </div>
+          <div class="input-block">
+            <input class="form__field" placeholder="{{ translations.modals.contacts.form.rows.website }}" type="text" name="lead[website]" id="lead_website" />
+            <div class="placeholder">{{ translations.modals.contacts.form.rows.website }}</div>
+          </div>
+          <div class="input-block">
+            <input class="form__field" placeholder="{{ translations.modals.contacts.form.rows.email }}" type="email" name="lead[email]" id="lead_email" />
+            <div class="placeholder">{{ translations.modals.contacts.form.rows.email }}</div>
+          </div>
+          <div class="input-block">
+            <input placeholder="{{ translations.modals.contacts.form.rows.description }}" type="text" name="lead[description]" id="lead_description" />
+            <div class="placeholder">{{ translations.modals.contacts.form.rows.description }}</div>
+          </div>
+          <div class="modal-btn">
+            <button name="button" type="submit" class="main-btn">{{ translations.modals.contacts.form.btns.submit }}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

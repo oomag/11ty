@@ -1,0 +1,34 @@
+{
+  "name": "@oomag/website-static-scripts",
+  "version": "1.0.0",
+  "description": "Configuration and scripts for Website static",
+  "bin": {
+    "@testcp/website-static-scripts": "bin/website-static-scripts",
+    "website-static-scripts": "bin/website-static-scripts"
+  },
+  "keywords": [
+    "website-static-scripts",
+    "scripts"
+  ],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "config",
+    "scripts",
+    "utils"
+  ],
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "coffeescript": "^2.7.0",
+    "dotenv": "^16.3.1",
+    "escape-string-regexp": "^5.0.0",
+    "favicons": "^7.1.4",
+    "fs": "^0.0.1-security",
+    "node-retrieve-globals": "^2.0.4",
+    "path": "^0.12.7",
+    "sass": "^1.69.5",
+    "terser": "^5.24.0",
+    "toml": "^3.0.0",
+    "execa": "^5.1.1"
+  }
+}
