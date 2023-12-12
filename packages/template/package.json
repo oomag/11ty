@@ -1,5 +1,4 @@
 {
-  "name": "@oomag/website-static-template",
   "description": "The base website static template",
   "keywords": [
     "website-static",
@@ -15,7 +14,6 @@
     "src"
   ],
   "dependencies": {
-    "@oomag/website-static-scripts": "^1.0.1",
     "bootstrap": "^5.3",
     "intl-tel-input": "^14.0.0",
     "jquery": "^1.12.4",

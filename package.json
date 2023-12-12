@@ -1,8 +1,12 @@
 {
   "name": "@oomag/create-website-static",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A CLI to bootstrap static websites",
-  "main": "src/index.js",
+  "workspaces": {
+    "packages": [
+      "packages/website-static-scripts"
+    ]
+  },
   "bin": {
     "@testcp/create-website-static": "bin/create-website-static",
     "create-website-static": "bin/create-website-static"

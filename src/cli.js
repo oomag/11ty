@@ -29,7 +29,7 @@ const promptForMissingOptions = async (options)  => {
       targetDirectory: options.targetDirectory || defaultDirectory
     }
   }
-  console.log('options', options);
+
   const questions = [];
   if (!options.targetDirectory) {
     questions.push({

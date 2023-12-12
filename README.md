@@ -101,7 +101,16 @@ Your environment will have everything you need to build a modern static-website:
 
 # Publish Module
 
+For publishing cli module:
+
 ```
 npm publish --access=public
 ```
+
+For publishing dependencies:
+
+```
+npm publish --workspaces --access public
+```
+
 

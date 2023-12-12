@@ -5,22 +5,48 @@ import path from "path";
 import { promisify } from "util";
 import Listr from "listr";
 import { projectInstall } from "pkg-install";
-import cp from "child_process";
+import os from "os";
 
 const access = promisify(fs.access);
 const copy = promisify(ncp);
 
 const currentFileUrl = import.meta.url;
-const packagesDir = path.resolve(
+const rootDir = path.resolve(
   new URL(currentFileUrl).pathname,
-  '../../packages',
+  '../../',
 );
+const packagesDir = path.join(rootDir, 'packages');
+
 
 const copyTemplateFiles = async (options) => {
   return copy(options.templateDirectory, options.targetDirectory, {
     clobber: false
   })
 }
+
+const replaceLocalDependencies = async (options) => {
+  const {name, version} = JSON.parse(fs.readFileSync(path.join(packagesDir, 'website-static-scripts','package.json'), 'utf8'));
+
+  const packageInfo = {name, version};
+
+  const packageJson = JSON.parse(fs.readFileSync(path.join(options.targetDirectory,'package.json'), 'utf8'));
+
+  const newPackageJson = {
+    name: options.targetDirectory,
+    version: '0.1.0',
+    private: true,
+    ...packageJson
+  }
+  newPackageJson.dependencies[packageInfo.name] = `^${packageInfo.version}`
+
+  fs.writeFileSync(
+    path.join(options.targetDirectory, 'package.json'),
+    JSON.stringify(newPackageJson, null, 2) + os.EOL
+  );
+
+  return;
+}
+
 
 export const createProject = async (options) => {
   options = {
@@ -46,6 +72,11 @@ export const createProject = async (options) => {
       title: 'Copy project files',
       task: () => copyTemplateFiles(options),
     },
+    {
+      title: 'Replace local dependencies',
+      task: () => replaceLocalDependencies(options),
+    },
+
     {
       title: 'Install dependencies',
       task: () => projectInstall({
