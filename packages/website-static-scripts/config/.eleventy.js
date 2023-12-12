@@ -52,7 +52,7 @@ let faviconTags = '';
 //
 // {dir}_path Filter Setup
 //
-const path_filter_dirs = [ 'js', 'css', 'fonts', 'images' ];
+const path_filter_dirs = [ 'js', 'css', 'fonts', 'images', 'videos' ];
 
 const nunjucksEnvironment = new Nunjucks.Environment(
   new Nunjucks.FileSystemLoader([
