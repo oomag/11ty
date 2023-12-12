@@ -98,3 +98,10 @@ Your environment will have everything you need to build a modern static-website:
 - favicon_tags - generate favicons set from favicon.png
 - jsmin - minify the js file
 - sass - gerate and minify the css file
+
+# Publish Module
+
+```
+npm publish --access=public
+```
+
