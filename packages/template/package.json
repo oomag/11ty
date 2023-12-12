@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "files": [
-    "src"
+    "src",
+    ".gitignore"
   ],
   "dependencies": {
     "bootstrap": "^5.3",
